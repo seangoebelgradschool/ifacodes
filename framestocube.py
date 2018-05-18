@@ -1,4 +1,4 @@
-import pyfits
+import astropy.io.fits as pyfits
 import numpy as np
 import glob
 import pdb
@@ -30,15 +30,19 @@ def main(filestub='', outname='', first=-1, last=-1):
 
     for i in range(len(files)):
         myframenum = framenum(files[i], filestub)
+        if i%int(len(files)/100)==0:
+            print str(int(round(float(i)/len(files)*100.)))+"% done."
+            
         if (myframenum >= first) & (myframenum <= last):
             if 'cube' not in locals(): #first time, initialize cube
                 im = pyfits.getdata(files[i])
-                cube = np.zeros(np.append(last-first+1, np.shape(np.squeeze(im))))
 
-            cube[myframenum-first, :,:] = pyfits.getdata(files[i])
+                cube = np.zeros(np.append(int(last-first+1), np.shape(np.squeeze(im))))
+
+            cube[int(myframenum-first), :,:] = pyfits.getdata(files[i])
             #print "file, layer", files[i], myframenum-first
 
-    pyfits.writeto(outname, cube, clobber=True)
+    pyfits.writeto(outname, cube.astype('uint16'), overwrite=True)
     print "Wrote file", outname
 
 
