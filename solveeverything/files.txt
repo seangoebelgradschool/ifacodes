@@ -1,0 +1,28 @@
+#This should be structured as
+#[PRV voltage] PRV
+#e.g. 3.5910 PRV
+#[Common voltage] filename.fits (directory is optional)
+#e.g. 10 ~/Desktop/myfile.fits
+#Comments can be indicated with a #
+#e.g. This is a comment
+#If all files are in one directory, that directory can be specified after a 99.
+#Otherwise it is assumed the directory info is in the filename.
+
+3.5910 PRV
+99 /media/pizzabox/d9c0c4fb-af15-44a3-8ce4-b436b18d5201/pizzabox/seansdata_20180804/
+3.0391 illum_c=3.0391.fits
+2.5422 illum_c=2.5422.fits
+1.5435 illum_c=1.5435.fits
+0.5505 illum_c=0.5505.fits
+-1.4352 illum_c=-1.4352.fits
+-2.4340 illum_c=-2.4340.fits
+-3.4270 illum_c=-3.4270.fits
+-4.4188 illum_c=-4.4188.fits
+-5.4107 illum_c=-5.4107.fits
+-6.402 illum_c=-6.402.fits
+-6.406 illum_c=-6.406.fits
+-6.406 dim_illum_c=-6.406.fits
+-9.389 dim_illum_c=-9.389.fits
+#-9.389 unillum_c=-9.389.fits
+#-12.372 dim_illum_c=-12.372.fits
+#-12.372 unillum_c=-12.372.fits
